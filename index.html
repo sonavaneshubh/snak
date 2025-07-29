@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Nagpanchami Dipa 🎉</title>
+<style>
+    body {
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    h1 {
+        color: #fff;
+        font-size: 2.5rem;
+        text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff758c;
+        animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+        from { text-shadow: 0 0 5px #ff4d6d; }
+        to { text-shadow: 0 0 20px #ff2d55, 0 0 30px #ff758c; }
+    }
+    .snake-img {
+        width: 180px;
+        margin: 20px;
+        animation: wiggle 1.5s infinite alternate;
+    }
+    @keyframes wiggle {
+        0% { transform: rotate(-5deg); }
+        100% { transform: rotate(5deg); }
+    }
+    .message {
+        background: #fff3cd;
+        border: 3px solid #f39c12;
+        padding: 20px;
+        margin: 20px auto;
+        width: 85%;
+        border-radius: 15px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        box-shadow: 0 0 15px #ffd700;
+    }
+    .funny-comments {
+        background: #e0f7fa;
+        padding: 15px;
+        border-radius: 15px;
+        margin-top: 15px;
+        border: 2px dashed #00a8ff;
+        font-size: 1rem;
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    button {
+        background: #ff4d6d;
+        color: white;
+        font-size: 1.2rem;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 0 10px #ff4d6d;
+    }
+    button:hover {
+        background: #ff2d55;
+        transform: scale(1.1);
+    }
+    .magic-snakes {
+        position: fixed;
+        top: -100px;
+        width: 80px;
+        animation: fall 5s linear infinite;
+        z-index: 999;
+    }
+    @keyframes fall {
+        0% { transform: translateY(-100px) rotate(0deg); }
+        100% { transform: translateY(120vh) rotate(360deg); }
+    }
+    .footer {
+        margin-top: 25px;
+        color: #fff;
+        font-size: 1rem;
+        text-shadow: 0 0 5px #000;
+    }
+    /* ✅ Mobile responsiveness */
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 1.8rem;
+        }
+        .snake-img {
+            width: 120px;
+        }
+        .message, .funny-comments {
+            font-size: 1rem;
+            width: 90%;
+        }
+        button {
+            font-size: 1rem;
+            padding: 10px 20px;
+        }
+        .magic-snakes {
+            width: 60px;
+        }
+    }
+</style>
+</head>
+<body>
+    <h1>🐍 Happy Nagpanchami, Dear Dipa 🎉</h1>
+    <img src="image/snake-removebg-preview.png" class="snake-img" alt="Snake">
+    
+    <div class="message">
+        Hey Dipa,  
+        On this special Nagpanchami day, may Nag Devta bless you with happiness, joy, and lots of love...  
+        (And don’t worry, I told the snakes you’re my bestie, so they won’t chase you today 🤭)
+    </div>
+
+    <div class="funny-comments">
+        😂 Funny Bestie Moments:  
+        <ul style="list-style-type: none; padding: 0;">
+            <li>🐍 "Bestie, your sandals are officially snake-proof today!"</li>
+            <li>😂 "If you see a snake, just dance… it might become your biggest fan!"</li>
+            <li>😜 "This Nagpanchami, let's pray no snake mistakes your hair for their long-lost tail!"</li>
+        </ul>
+    </div>
+
+    <button onclick="releaseSnakes()">✨ Click for Magic ✨</button>
+
+    <div class="footer">
+        💖 With Love,<br>
+        <b>Shubham</b> 💕
+    </div>
+
+    <script>
+        function releaseSnakes() {
+            for (let i = 0; i < 8; i++) {
+                let snake = document.createElement("img");
+                snake.src = "image/snake-removebg-preview.png";  // ✅ Correct folder path
+                snake.className = "magic-snakes";
+                snake.style.left = Math.random() * window.innerWidth + "px";
+                snake.style.animationDuration = (3 + Math.random() * 3) + "s";
+                document.body.appendChild(snake);
+                setTimeout(() => snake.remove(), 5000);
+            }
+        }
+    </script>
+</body>
+</html>
